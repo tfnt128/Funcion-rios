@@ -10,8 +10,10 @@ namespace Funcionários
         {
             Console.Write("Quantos funcionários serão registrados? ");
             int n = int.Parse(Console.ReadLine());
+
+            //criando lista de funcionários
             List<Funcionarios> list = new List<Funcionarios>();
-            Funcionarios a;
+            
 
             for (int i = 0; i < n; i++)
             {
@@ -22,6 +24,8 @@ namespace Funcionários
                 string nome = Console.ReadLine();
                 Console.Write("Salário: ");
                 double sal = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                //adicionando e instanciando o id, nome e salário
                 list.Add(new Funcionarios(id, nome, sal));
                 Console.WriteLine("---------------------------");
 
@@ -30,8 +34,10 @@ namespace Funcionários
             Console.Write("Id do funcionário que receberá aumento: ");
             int searchid = int.Parse(Console.ReadLine());
 
+            //prucurando o id escolhido
             Funcionarios emp = list.Find(x => x.Id == searchid);
 
+            //vendo se o id existe
             if (emp == null)
             {
                 Console.WriteLine("Esse id não existe!");
